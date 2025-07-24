@@ -1,12 +1,9 @@
 import { forwardRef, Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { RegisterStudentDto } from './dto/create-student.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { StudentCourse } from './entities/student.entity';
 import { Repository } from 'typeorm';
 import { AuthService } from 'src/auth/auth.service';
 import { UserRole } from 'security/roles.enum';
-import { Roles } from 'security/roles.decorator';
-import { CoursesService } from 'src/courses/courses.service';
 import { StudentCoursesDto } from './dto/update-student.dto';
 
 @Injectable()
