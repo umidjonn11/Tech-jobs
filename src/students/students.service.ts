@@ -20,7 +20,7 @@ export class StudentsService {
   ) {}
 
   async create(createStudentDto: StudentCoursesDto) {
-    const user = await this.authService.findOne(createStudentDto.studentId);
+    const user = await this.authService.findOne(createStudentDto.usertId);
 
     if (!user) {
       throw new NotFoundException('Invalid id');

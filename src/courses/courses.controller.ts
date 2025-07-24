@@ -11,7 +11,7 @@ import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 @Controller('courses')
 export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
-  @ApiOperation({ summary: 'Create a new course  admin only' })
+  @ApiOperation({ summary: 'Create a new course / admin only' })
   @ApiBearerAuth()
   @UseGuards(AuthGuard, RolesGuard)
   @Roles(UserRole.admin)
@@ -24,7 +24,7 @@ export class CoursesController {
   findAll() {
     return this.coursesService.findAll();
   }
-  @ApiOperation({ summary: 'Registration for courses only for students' })
+  @ApiOperation({ summary: 'Registration for courses / only for students' })
   @ApiBearerAuth()
   @Post(':courseId/register')
   @UseGuards(AuthGuard, RolesGuard)

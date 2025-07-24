@@ -5,5 +5,5 @@ import { IsUUID } from 'class-validator';
 export class StudentCoursesDto {
   @ApiProperty({default:"2025-07-24 12:35:11.545529"})
   @IsUUID()
-  studentId: string;
+  usertId: string;
 }
